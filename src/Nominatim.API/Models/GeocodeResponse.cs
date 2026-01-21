@@ -1,6 +1,7 @@
 ﻿using GeoJSON.Net.Converters;
 using Newtonsoft.Json;
 
+
 namespace Nominatim.API.Models {
     public class GeocodeResponse : BaseNominatimResponse {
         [JsonProperty("boundingbox")]
@@ -48,5 +49,14 @@ namespace Nominatim.API.Models {
         /// </summary>
         [JsonProperty("geotext")]
         public string GeoText { get; set; }
+
+        [JsonProperty("osm_type")]
+        public string OsmType { get; set; }
+
+        [JsonProperty("osm_id")]
+        public long OsmId { get; set; }
+
+        [JsonProperty("Type")]
+        public string Type { get; set; }
     }
 }

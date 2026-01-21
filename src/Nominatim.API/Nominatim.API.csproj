@@ -1,26 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Christopher Flanagan</Authors>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Authors>Patrick</Authors>
     <Company />
     <Description>Library for utilizing geocoding (forward and reverse), in addition to address lookups, with the Nominatim HTTP API.</Description>
-    <PackageProjectUrl>https://github.com/f1ana/Nominatim.API</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/f1ana/Nominatim.API</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/pat2381/Nominatim.API</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/pat2381/Nominatim.API</RepositoryUrl>
     <PackageTags>nominatim, osm, geocode, geocoding</PackageTags>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <PackageLicenseUrl>https://github.com/f1ana/Nominatim.API/blob/master/LICENSE</PackageLicenseUrl>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.1</AssemblyVersion>
     <FileVersion>2.1.0.0</FileVersion>
     <PackageVersion>2.1.0</PackageVersion>
-    <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net9.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="GeoJSON.Net" Version="1.4.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="10.0.2" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+    <PackageReference Include="XENBIT.ResQueServe.Abstractions">
+      <Version>4.5.0-rc.1</Version>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
